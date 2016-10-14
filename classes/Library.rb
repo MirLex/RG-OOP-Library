@@ -1,5 +1,4 @@
 require 'yaml'
-
 class Library
 	attr_reader :books ,:orders, :readers, :authors
 
@@ -36,22 +35,33 @@ class Library
 
 	def getStats
 		self.instance_variables.each {|var| puts "#{var[1..-1].capitalize}: #{var.size}"}
-		mostPopularBook
-		bestReader
-		countReadersWhoOrderPopularBook
+		puts mostPopularBook
+		puts bestReader
+		puts countReadersWhoOrderPopularBook
 	end
 
 	private
-	def mostPopularBook
-
+	def mostPopularBook(books_count = 1)
+		#v1 ?
+		# booksRate = Hash[ self.orders.map { |v| [ v.book, condition with v] } ]
+		
+		#v2 done !
+		# booksRate = Hash.new{0}
+		# self.orders.each{ |order| booksRate[order.book] += 1}
+		# (booksRate.select {|k,v| k if v == booksRate.values.max }).keys
+		
+		#v3 count books are paremetr! for fun countReadersWhoOrderPopularBook
+		booksRate = Hash.new{0}
+		self.orders.each{ |order| booksRate[order.book] += 1}
+		booksRate.sort_by {|k,v| v}.reverse.to_h.keys[0...books_count]
 	end
 
 	def bestReader
-	
+		nil
 	end
 
 	def countReadersWhoOrderPopularBook(books_count = 3)
-	
+		nil
 	end
 
 end
