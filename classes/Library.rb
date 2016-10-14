@@ -56,8 +56,10 @@ class Library
 		booksRate.sort_by {|k,v| v}.reverse.to_h.keys[0...books_count]
 	end
 
-	def bestReader
-		nil
+	def bestReader(readers_count = 1)
+		readersRate = Hash.new{0}
+		self.orders.each{ |order| readersRate[order.reader] +=1}
+		readersRate.sort_by{|r,v| v}.reverse.to_h.keys[0...readers_count]
 	end
 
 	def countReadersWhoOrderPopularBook(books_count = 3)
