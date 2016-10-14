@@ -13,11 +13,12 @@ class Library
 
 	def export(file_path, method='YAML')
 		if method.downcase == 'yaml'
-			File.open(file_path +'.yaml','w') {|f| f.write(YAML.dump(self))}
+			File.open(file_path,'w') {|f| f.write(YAML.dump(self))}
 		end
 		if method.downcase == 'serialize'
-			File.open(file_path +'.dat','w') {|f| f.write(Marshal.dump(self))}
-		end	
+			File.open(file_path,'w') {|f| f.write(Marshal.dump(self))}
+		end
+		file_path
 	end
 
 	def self.import(file_path, method='YAML')
@@ -31,6 +32,26 @@ class Library
 		end
 
 		obj.class == self ? obj : (raise ArgumentError ,'Incorrect file')
+	end
+
+	def getStats
+		self.instance_variables.each {|var| puts "#{var[1..-1].capitalize}: #{var.size}"}
+		mostPopularBook
+		bestReader
+		countReadersWhoOrderPopularBook
+	end
+
+	private
+	def mostPopularBook
+
+	end
+
+	def bestReader
+	
+	end
+
+	def countReadersWhoOrderPopularBook(books_count = 3)
+	
 	end
 
 end
