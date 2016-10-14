@@ -41,7 +41,7 @@ class Library
 	end
 
 	private
-	def mostPopularBook(books_count = 1)
+	def mostPopularBook(books_count = 3)
 		#v1 ?
 		# booksRate = Hash[ self.orders.map { |v| [ v.book, condition with v] } ]
 		
@@ -63,7 +63,11 @@ class Library
 	end
 
 	def countReadersWhoOrderPopularBook(books_count = 3)
-		nil
+		mostPopularBooks = mostPopularBook(3)
+		ordersOfBook =  self.orders.group_by {|order| order.book}
+		ordersWithPopBook = ordersOfBook.map{|book,v| v if mostPopularBooks.include?(book)}.compact
+		uniqReaders = ordersWithPopBook.flatten.uniq{|order| order.reader}
+		uniqReaders.size
 	end
 
 end
