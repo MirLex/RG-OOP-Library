@@ -21,12 +21,16 @@ class Library
 	end
 
 	def self.import(file_path, method='YAML')
-		if method.downcase == 'yaml'
-			return YAML.load(File.read(file_path + '.yaml'))
+		if File.file?(file_path)
+			if method.downcase == 'yaml'
+				obj =  YAML.load(File.read(file_path)) 
+			end
+			if method.downcase == 'serialize'
+				obj = Marshal.load(File.read(file_path)) 
+			end
 		end
-		if method.downcase == 'serialize'
-			return Marshal.load(File.read(file_path + '.dat'))		
-		end	
+
+		obj.class == self ? obj : (raise ArgumentError ,'Incorrect file')
 	end
 
 end
