@@ -63,6 +63,7 @@ class Library
 	end
 
 	def countReadersWhoOrderPopularBook(books_count = 3)
+		#TODO One line code
 		mostPopularBooks = mostPopularBook(3)
 		ordersOfBook =  self.orders.group_by {|order| order.book}
 		ordersWithPopBook = ordersOfBook.map{|book,v| v if mostPopularBooks.include?(book)}.compact
