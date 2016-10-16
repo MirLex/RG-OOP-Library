@@ -5,13 +5,9 @@ require_relative('classes/Book')
 require_relative('classes/Order')
 require_relative('classes/Library')
 require_relative('test_data')
+require_relative('modules/terminalShow.rb')
 
-#TODO put it to module?
-def putSeparator(message = '',length = 80)
-	length.times{print '_'}
-	puts "\n" + message.to_s 
-end
-
+include TerminalShow
 
 putSeparator('Start')
 begin
@@ -22,6 +18,6 @@ rescue ArgumentError => e
   library = Library.import(createTestData)
   puts "Load Test Data"
 end
-putSeparator('End')
 
 library.getStats
+putSeparator
