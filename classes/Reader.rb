@@ -9,4 +9,7 @@ class Reader < Person
 		super(name)
 	end
 
+	def to_s
+		"#{@name}"
+	end
 end
