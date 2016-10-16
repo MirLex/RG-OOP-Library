@@ -9,4 +9,8 @@ class Order
 		@reader = reader
 	end
 
+	def to_s
+		"#{@book.title}/#{@reader.name}"
+	end
+
 end
