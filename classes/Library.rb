@@ -46,12 +46,10 @@ class Library
   private
 
   def get_best(obj, count)
-    lambda do |obj, count|
       result = Hash.new { 0 }
       orders.each { |order| result[order.send(obj)] += 1 }
       result.sort_by { |_obj, orders_count| orders_count }
             .reverse.to_h.keys[0...count]
-    end.call(obj, count)
   end
 
   def readers_who_order_popular_book(_books_count = 3)
