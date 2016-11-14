@@ -29,4 +29,15 @@ RSpec.describe Library do
       expect { Library.import('IncorrectPath') }.to raise_error(ArgumentError)
     end
   end
+
+  context '#export' do
+    it 'export obj to Yaml file' do
+      library.export('./data/library.yaml')
+      expect(File.file?('./data/library.yaml')).to be true
+    end
+    it 'serialize obj to file' do
+      library.export('./data/library.dat', 'serialize')
+      expect(File.file?('./data/library.dat')).to be true 
+    end
+  end
 end
