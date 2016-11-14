@@ -37,16 +37,16 @@ RSpec.describe Library do
     end
     it 'serialize obj to file' do
       library.export('./data/library.dat', 'serialize')
-      expect(File.file?('./data/library.dat')).to be true 
+      expect(File.file?('./data/library.dat')).to be true
     end
   end
 
   context '#best' do
     it 'determines best book' do
-      expect(library.send(:get_best ,:book, 1).first.title).to eq('Ruby Best Practices')
+      expect(library.send(:get_best, :book, 1).first.title).to eq('Ruby Best Practices')
     end
     it 'determines best reader' do
-      expect(library.send(:get_best ,:reader, 1).first.name).to eq('Marvin Duran')
+      expect(library.send(:get_best, :reader, 1).first.name).to eq('Marvin Duran')
     end
   end
 
