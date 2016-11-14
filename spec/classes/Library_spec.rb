@@ -40,4 +40,19 @@ RSpec.describe Library do
       expect(File.file?('./data/library.dat')).to be true 
     end
   end
+
+  context '#best' do
+    it 'determines best book' do
+      expect(library.send(:get_best ,:book, 1).first.title).to eq('Ruby Best Practices')
+    end
+    it 'determines best reader' do
+      expect(library.send(:get_best ,:reader, 1).first.name).to eq('Marvin Duran')
+    end
+  end
+
+  context '#readers_who_order_popular_book' do
+    it 'determines count of readers who ordered popular book' do
+      expect(library.send(:readers_who_order_popular_book).count).to eq(4)
+    end
+  end
 end
