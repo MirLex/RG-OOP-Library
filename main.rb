@@ -19,5 +19,5 @@ rescue ArgumentError => e
   puts 'Load Test Data'
 end
 
-library.get_stats
+library.statistics
 putSeparator

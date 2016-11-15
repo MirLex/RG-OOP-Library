@@ -1,7 +1,6 @@
 require_relative('../modules/terminalShow.rb')
 require_relative('../modules/dataTransfer.rb')
 require 'yaml'
-require 'pry'
 
 class Library
   include TerminalShow
@@ -15,7 +14,7 @@ class Library
     @authors = authors
   end
 
-  def get_stats
+  def statistics
     putSeparator('The most popular book:')
     puts most_active(:book)
     putSeparator('Who often takes the book:')
