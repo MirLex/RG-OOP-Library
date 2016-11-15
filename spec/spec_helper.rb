@@ -1,5 +1,4 @@
 require 'bundler/setup'
-# require_relative('../classes/Library')
 require_relative('../lib/person')
 require_relative('../lib/author')
 require_relative('../lib/reader')

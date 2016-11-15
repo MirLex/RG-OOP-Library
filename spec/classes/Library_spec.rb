@@ -43,10 +43,10 @@ RSpec.describe Library do
 
   context '#best' do
     it 'determines best book' do
-      expect(library.send(:get_best, :book, 1).first.title).to eq('Ruby Best Practices')
+      expect(library.send(:most_active, :book, 1).first.title).to eq('Ruby Best Practices')
     end
     it 'determines best reader' do
-      expect(library.send(:get_best, :reader, 1).first.name).to eq('Marvin Duran')
+      expect(library.send(:most_active, :reader, 1).first.name).to eq('Marvin Duran')
     end
   end
 
