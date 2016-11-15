@@ -34,9 +34,7 @@ class Library
 
   def readers_who_order_popular_book(books_count = 3)
     most_popular_books = most_active(:book, books_count)
-    orders.group_by(&:book)
-          .map { |book, order| order if most_popular_books.include?(book) }
-          .compact
-          .flatten.uniq(&:reader)
+    orders.select { |order| most_popular_books.include?(order.book) }
+          .uniq(&:reader)
   end
 end
