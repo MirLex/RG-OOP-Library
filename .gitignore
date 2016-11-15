@@ -10,7 +10,6 @@
 /test/version_tmp/
 /tmp/
 data/
-ttt/
 #.gitignore
 # Used by dotenv library to load environment variables.
 # .env
