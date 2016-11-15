@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 require_relative('../modules/terminalShow.rb')
 require 'yaml'
 class Library
@@ -6,7 +5,6 @@ class Library
   attr_reader :books, :orders, :readers, :authors
 
   def initialize(books, orders, readers, authors)
-    # TODO: check class
     @books = books
     @orders = orders
     @readers = readers
@@ -46,10 +44,10 @@ class Library
   private
 
   def get_best(obj, count)
-      result = Hash.new { 0 }
-      orders.each { |order| result[order.send(obj)] += 1 }
-      result.sort_by { |_obj, orders_count| orders_count }
-            .reverse.to_h.keys[0...count]
+    result = Hash.new { 0 }
+    orders.each { |order| result[order.send(obj)] += 1 }
+    result.sort_by { |_obj, orders_count| orders_count }
+          .reverse.to_h.keys[0...count]
   end
 
   def readers_who_order_popular_book(_books_count = 3)

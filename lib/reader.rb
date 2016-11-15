@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class Reader < Person
   attr_accessor :biography, :email, :city, :street, :house
 

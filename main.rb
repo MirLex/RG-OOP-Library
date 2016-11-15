@@ -1,10 +1,9 @@
-# frozen_string_literal: true
-require_relative('classes/Person')
-require_relative('classes/Author')
-require_relative('classes/Reader')
-require_relative('classes/Book')
-require_relative('classes/Order')
-require_relative('classes/Library')
+require_relative('lib/person')
+require_relative('lib/author')
+require_relative('lib/reader')
+require_relative('lib/book')
+require_relative('lib/order')
+require_relative('lib/library')
 require_relative('test_data')
 require_relative('modules/terminalShow.rb')
 

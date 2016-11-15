@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 class Author < Person
   attr_accessor :biography
 
