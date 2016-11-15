@@ -1,6 +1,7 @@
 require_relative('../modules/terminalShow.rb')
 require_relative('../modules/dataTransfer.rb')
 require 'yaml'
+require 'pry'
 
 class Library
   include TerminalShow
@@ -16,24 +17,23 @@ class Library
 
   def get_stats
     putSeparator('The most popular book:')
-    puts most_active(:book, 1)
+    puts most_active(:book)
     putSeparator('Who often takes the book:')
-    puts most_active(:reader, 1)
+    puts most_active(:reader)
     putSeparator('How many people ordered one of the three most popular books:')
     puts readers_who_order_popular_book.count
   end
 
   private
 
-  def most_active(obj, count)
-    result = Hash.new { 0 }
-    orders.each { |order| result[order.send(obj)] += 1 }
-    result.sort_by { |_obj, orders_count| orders_count }
-          .reverse.to_h.keys[0...count]
+  def most_active(obj, count = 1)
+    orders.group_by { |order| order.send(obj) }
+          .sort_by { |_book, orders| -orders.size }
+          .to_h.keys[0...count]
   end
 
-  def readers_who_order_popular_book(_books_count = 3)
-    most_popular_books = most_active(:book, 3)
+  def readers_who_order_popular_book(books_count = 3)
+    most_popular_books = most_active(:book, books_count)
     orders.group_by(&:book)
           .map { |book, order| order if most_popular_books.include?(book) }
           .compact
