@@ -1,19 +1,0 @@
-o:Library	:@books[o:	Book:@titleI"Ruby Best Practices:ET:@authoro:Author:@biographyI"œGregory Brown has run the independently published Practicing Ruby journal since 2010, and is the original author of the popular Prawn PDF generation library;	T:
-@nameI"Gregory T Brown;	To;;I"Programming Ruby;	T;
-o;;I"Æwrote The Pragmatic Programmer with Andy Hunt at the end of the 90s, and that experience opened a new world for us. We discovered a love of writing that complemented our love of learning new things.;	T;I"Dave Thomas;	To;;I"The Pragmatic Programmer;	T;
-@o;;I""The Ruby Programming Language;	T;
-o;;I"David Flanagan is a computer programmer who has spent much of the last 20 years writing books about programming languages. He now works at Mozilla. David lives with his wife and children in the Pacific Northwest, between the cities of Seattle and Vancouver.;	T;I"David Flanagan;	To;;I"Fahrenheit 451;	T;
-o;;I"Ðwas born in India and served with the Imperial Police in Burma before joining the Republican Army in the Spanish Civil War. Orwell was the author of six novels as well as numerous essays and nonfiction works.;	T;I"George Orwell;	To;;I"	1984;	T;
-o;;I"¤In a career spanning more than seventy years, Ray Bradbury, who died on June 5, 2012, at the age of 91, inspired generations of readers to dream, think, and create.;	T;I"Ray Bradbury;	To;;I"Dandelion Wine;	T;
-@o;;I"Fight Club;	T;
-o;;I"CChuck Palahniuks novels are the bestselling Fight Club, which was made into a film by director David Fincher, Diary, Lullaby, Survivor, Haunted, and Invisible Monsters. Portions of Choke have appeared in Playboy, and Palahniuks nonfiction work has been published by Gear, Black Book, The Stranger, and the Los Angeles Times;	T;I"Chuck Palahniuk;	T:@orders[o:
-Order:
-@dateI"15/11/2016 11:30;	T:
-@book@:@readero:Reader
-:@emailI"DeborahJBlack@armyspy.com;	T:
-@cityI"Pittsburgh;	T:@streetI"Eagle Street;	T:@houseI"316;	T;I"Deborah Black;	To;;I"15/11/2016 11:30;	T;@;@,o;;I"15/11/2016 11:30;	T;@;o;
-;I"HaroldBRay@dayrep.com;	T;I"Middleboro;	T;I"Lyon Avenue;	T;I"	4625;	T;I"Harold Ray;	To;;I"15/11/2016 11:30;	T;@;o;
-;I"AnnaDDay@armyspy.com;	T;I"Newark;	T;I"Lakewood Drive;	T;I"	1094;	T;I"Anna Day;	To;;I"15/11/2016 11:30;	T;@;o;
-;I"DorisRVergara@dayrep.com;	T;I"Asheville;	T;I"McVaney Road;	T;I"	1199;	T;I"Doris Vergara;	To;;I"15/11/2016 11:30;	T;@;@Fo;;I"15/11/2016 11:30;	T;@$;o;
-;I"TimothyMConley@teleworm.us;	T;I"Boston;	T;I"Randolph Street;	T;I"	4042;	T;I"Timothy Conley;	To;;I"15/11/2016 11:30;	T;@;@6o;;I"15/11/2016 11:30;	T;@";@6o;;I"15/11/2016 11:30;	T;@$;o;
-;I"MarvinPDuran@armyspy.com;	T;I"Jupiter;	T;I"Wyatt Street;	T;I"91;	T;I"Marvin Duran;	To;;I"15/11/2016 11:30;	T;@;@\o;;I"15/11/2016 11:30;	T;@;@\o;;I"15/11/2016 11:30;	T;@;@\o;;I"15/11/2016 11:30;	T;@;@\:@readers[@,@>@F@P@6@\:@authors[@	@@@@@&
