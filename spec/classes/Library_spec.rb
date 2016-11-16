@@ -41,7 +41,7 @@ RSpec.describe Library do
     end
   end
 
-  context '#best' do
+  context '#most_active' do
     it 'determines best book' do
       expect(library.send(:most_active, :book, 1).first.title).to eq('Ruby Best Practices')
     end
