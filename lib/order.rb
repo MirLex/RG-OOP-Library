@@ -3,7 +3,6 @@ class Order
 
   def initialize(book, reader)
     @date = Time.now.strftime('%d/%m/%Y %H:%M')
-
     @book = book
     @reader = reader
   end

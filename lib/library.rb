@@ -28,9 +28,8 @@ class Library
 
   def most_active(obj, count = 1)
     orders.group_by { |order| order.send(obj) }
-          .sort_by { |_book, orders| -orders.size }
-          .first(count)
-          .to_h.keys
+          .max_by(count) { |_book, orders| orders.size }
+          .map(&:first)
   end
 
   def readers_who_order_popular_book(books_count = 3)
