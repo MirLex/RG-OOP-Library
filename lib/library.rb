@@ -1,6 +1,7 @@
 require_relative('../modules/terminalShow.rb')
 require_relative('../modules/dataTransfer.rb')
 require 'yaml'
+require 'pry'
 
 class Library
   include TerminalShow
@@ -28,7 +29,8 @@ class Library
   def most_active(obj, count = 1)
     orders.group_by { |order| order.send(obj) }
           .sort_by { |_book, orders| -orders.size }
-          .to_h.keys[0...count]
+          .first(count)
+          .to_h.keys
   end
 
   def readers_who_order_popular_book(books_count = 3)
