@@ -1,18 +1,19 @@
 require 'spec_helper'
 
 RSpec.describe Library do
-  let(:library) { Library.import(createTestData) }
+  subject(:library) { Library.import(createTestData) }
 
   context '.new' do
     it 'create new library instance' do
       lib = Library.new(1, 2, 3, 4)
-      expect(lib.class).to eq(Library)
+      expect(lib.instance_of?(Library)).to be true
     end
   end
 
   context '.import' do
     it 'import yaml file' do
       lib = Library.import('./data/library.yaml')
+      expect(lib.instance_of?(Library)).to be true
       expect(lib.books.count).to eq(8)
       expect(lib.readers.count).to eq(6)
       expect(lib.authors.count).to eq(6)
@@ -20,6 +21,7 @@ RSpec.describe Library do
     end
     it 'import serialize file' do
       lib = Library.import('./data/library.dat', 'serialize')
+      expect(lib.instance_of?(Library)).to be true
       expect(lib.books.count).to eq(8)
       expect(lib.readers.count).to eq(6)
       expect(lib.authors.count).to eq(6)
@@ -43,16 +45,16 @@ RSpec.describe Library do
 
   context '#most_active' do
     it 'determines best book' do
-      expect(library.send(:most_active, :book, 1).first.title).to eq('Ruby Best Practices')
+      expect(library.most_active_book.first.title).to eq('Ruby Best Practices')
     end
     it 'determines best reader' do
-      expect(library.send(:most_active, :reader, 1).first.name).to eq('Marvin Duran')
+      expect(library.most_active_reader.first.name).to eq('Marvin Duran')
     end
   end
 
   context '#readers_who_order_popular_book' do
     it 'determines count of readers who ordered popular book' do
-      expect(library.send(:readers_who_order_popular_book).count).to eq(4)
+      expect(library.count_readers_who_order_popular_book).to eq(4)
     end
   end
 end
