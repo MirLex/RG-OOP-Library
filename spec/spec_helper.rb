@@ -8,8 +8,3 @@ require_relative('../lib/library')
 require_relative('../test_data')
 require_relative('../modules/terminalShow.rb')
 require('pry')
-
-RSpec.configure do |c|
-  c.formatter = :documentation
-  c.color = true
-end
