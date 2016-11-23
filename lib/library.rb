@@ -27,8 +27,8 @@ class Library
   private
 
   def most_active(obj, count = 1)
-    orders.group_by { |order| order.send(obj) }
-          .max_by(count) { |_book, orders| orders.size }
+    orders.group_by(&obj)
+          .max_by(count) { |_obj, orders| orders.size }
           .map(&:first)
   end
 
