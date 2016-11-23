@@ -15,13 +15,25 @@ class Library
     @authors = authors
   end
 
+  def most_active_book
+    most_active(:book)
+  end  
+
+  def most_active_reader
+    most_active(:reader)
+  end
+
+  def count_readers_who_order_popular_book
+    readers_who_order_popular_book.count
+  end
+
   def statistics
     putSeparator('The most popular book:')
-    puts most_active(:book)
+    puts most_active_book
     putSeparator('Who often takes the book:')
-    puts most_active(:reader)
+    puts most_active_reader
     putSeparator('How many people ordered one of the three most popular books:')
-    puts readers_who_order_popular_book.count
+    puts count_readers_who_order_popular_book
   end
 
   private
