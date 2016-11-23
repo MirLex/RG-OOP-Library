@@ -15,11 +15,9 @@ module DataTransfer
 
   module InstanceMethods
     def export(file_path, method = 'YAML')
-      if method.casecmp('serialize').zero?
-        File.open(file_path, 'w') { |f| f.write(Marshal.dump(self)) }
-      else
-        File.open(file_path, 'w') { |f| f.write(YAML.dump(self)) }
-      end
+      service = method.casecmp('serialize').zero? ? Marshal : YAML
+      File.open(file_path, 'w') { |f| f.write(service.dump(self)) }
+
       file_path
     end
   end
